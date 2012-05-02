@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8"/>
+	<title>Policy Maker App</title>
+	
+	<link rel="stylesheet" href="http://tiddlyspace.com/bags/common/tiddlers/reset">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="js/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="beta">Beta</div>
+
+		<section class="guest-view">
+			<h2>You are not a member of this space.</h2>
+			<p class="big">That means you can not edit the policy of this spaces. If you want to edit the policy of your space please include the <a href="http://policymaker.tiddlyspace.com">policymaker</a> space.</p>
+		</section>
+
+		<section class="policy-view public" data-privacy="public">
+			<section>
+				<h3>Current space: <strong></strong></h3>
+				<div class="porp">
+					<button class="public">Use public bag</button>
+					<button class="private">Use private bag</button>
+				</div>
+			</section>
+			<section>
+				<form action="">
+					<label for="readinput">Read</label>
+					<input type="text" id="readinput" name="read" />
+					<label for="writeinput">Write</label>
+					<input type="text" id="writeinput" name="write" />
+					<label for="createinput">Create</label>
+					<input type="text" id="createinput" name="create" />
+					<label for="deleteinput">Delete</label>
+					<input type="text" id="deleteinput" name="delete" />
+					<label for="acceptinput">Accept</label>
+					<input type="text" id="acceptinput" name="accept" />
+					<label for="manageinput">Manage</label>
+					<input type="text" id="manageinput" name="manage" />
+					<div class="form-ctrls">
+						<button type="submit" class="submit btn">Save</button>
+						<button class="reset btn">Cancel</button>
+					</div>
+				</form>
+			</section>
+			<section class="help">
+				<h4>How To:</h4>
+				<p>A string representing one of these built in meanings:
+					<ul>
+						<li>GUEST: The default unauthenticated user.</li>
+						<li>NONE: No user, whether GUEST or authenticated, may pass this constraint. Web access is completely restricted for this constraint.</li>
+						<li>ANY: Any authenticated (not GUEST) user.</li>
+					</ul>
+					For more info visit <a href="http://tiddlyweb.tiddlyspace.com/bags/tiddlyweb_public/tiddlers/policy">here</a>.
+				</p>
+			</section>
+		</section>
+	</div>
+
+</body>
+<script src="http://tiddlyspace.com/bags/common/tiddlers/jquery.js"></script>
+<script src="http://tiddlyspace.com/bags/tiddlyspace/tiddlers/chrjs"></script>
+<script src="policymaker.js"></script>
+</html>

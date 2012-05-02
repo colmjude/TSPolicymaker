@@ -1,0 +1,231 @@
+html {
+	background: #F2F2F2;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	letter-spacing: 0.02em;
+	color: #4D4D4D;
+	font-size: 62.5%;
+	background-position: 0px 0px;
+}
+
+#wrapper {
+	margin: 0 auto 2em;
+	max-width: 960px;
+	position: relative;
+}
+
+#wrapper > section {
+	padding: 1em;
+	box-shadow: 0px 0px 4px rgba(50,50,50,0.2);
+	margin: 2em 0 0;
+}
+
+.beta {
+	font-size: 1.6em;
+	background: #EB4715;
+	color: #fff;
+	padding: 0.6em;
+	display: inline;
+	position: absolute;
+	top: -3em; right: 0;
+}
+
+.guest-view {
+	background: #db3138;
+	font-size: 2.4em;
+	color: #fff;
+	display: none;
+}
+
+.guest-view a {
+	color: #fff;
+}
+
+.policy-view {
+	font-size: 2.4em;
+	background: #fff;
+	padding-top: 0;
+	position: relative;
+}
+
+.policy-view h3 {
+	font-size: 1.5em;
+}
+
+.public {
+	border-top: 4px solid #0082AF;
+}
+
+.private {
+	border-top: 4px solid #BC4378;
+}
+
+.disabled {
+	border-top: 4px solid #ccc;
+	color: #ccc;
+}
+
+.disabled label {
+	color: #ccc;
+}
+
+.porp {
+	margin-bottom: 1.5em;
+}
+
+div.porp button {
+	background: #fff;
+	color: #ccc;
+	border: 2px solid #fff;
+}
+
+.public .public {
+	border: 2px solid #0082AF;
+	color: #0082AF;
+}
+
+.private .private {
+	border: 2px solid #BC4378;
+	color: #BC4378;
+}
+
+.private button.public:hover {
+	color: #ADD1DD;
+	border: 2px solid #ADD1DD;
+}
+
+.public button.private:hover {
+	color: #DCA2BB;
+	border: 2px solid #dca2bb;
+}
+
+.disabled .private,
+.disabled .public {
+	color: #ccc;
+	border: 2px solid #ccc;
+}
+
+form {
+	max-width: 600px;
+}
+
+label {
+	width: 29%;
+	display: inline-block;
+	padding-left: 1%;
+}
+
+input {
+	font-size: inherit;
+	width: 65%;
+	margin-bottom: 0.5em;
+	border: 1px solid #BDBDBD;
+	padding: 0.2em;
+}
+
+.public input {
+	color: #ADD1DD;
+}
+
+.public input:focus {
+	outline: 0;
+	border-color: rgba(0, 130, 175, 0.8);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+}
+
+.lt-ie9 .public input:focus {
+	border-color: #0082AF;
+}
+
+.private input {
+	color: #DCA2BB;
+}
+
+.private input:focus {
+	outline: 0;
+	border-color: rgba(188, 67, 122, 0.8);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+}
+
+.lt-ie9 .private input:focus {
+	border-color: #BC4378;
+}
+
+.public input.editing, .public input.changed {
+	color: #0082AF;
+}
+
+.private input.editing, .private input.changed {
+	color: #BC4378;
+}
+
+.form-ctrls {
+	margin-top: 1em;
+}
+
+button {
+	cursor: pointer;
+	padding: 0.65em 0.5em;
+	font-size: inherit;
+	border: none;
+	color: #fff;
+}
+
+.form-ctrls button {
+	padding: 0.65em 1em;
+}
+
+.public button {
+	background: #0082AF;
+}
+
+.private button {
+	background: #BC4378;
+}
+
+.disabled button {
+	background: #ccc;
+}
+
+form button.reset {
+	background: none;
+	color: #0082AF;
+}
+
+.disabled form button.reset {
+	color: #ccc;
+}
+
+.private .reset {
+	color: #BC4378;
+}
+
+.help {
+	font-size: 0.67em;
+	width: 32%;
+	background: #F0F4F8;
+	box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.25), -1px 0px 3px 0px rgba(0,0,0,0.25);
+	position: absolute;
+	right: -3em; top: 3em;
+	border-radius: 2px;
+	padding: 1em;
+}
+
+.help, .help a {
+	color: #8C9DA7;
+}
+
+.disabled .help {
+	background: #fff;
+	color: #ccc;
+}

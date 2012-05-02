@@ -1,0 +1,6 @@
+A Single Page App for Tiddlyspace that allows a member of a space to edit the policy of the bags comprising the space through a simple interface.
+
+### Dependencies
+* jQuery (http://jquery.com)
+* chrjs (http://tiddlyspace.com/bags/tiddlyspace/tiddlers/chrjs)
+* TiddlySpace (https://github.com/tiddlyspace/tiddlyspace)
