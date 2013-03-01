@@ -1,7 +1,6 @@
 (function($, tw) {
 
 	var bag,
-		host,
 		form,
 		space,
 		owner,
@@ -48,7 +47,7 @@
 	}
 
 	function fetchPolicy(type, callback) {
-		bag = new tw.Bag(space + "_" + type, host);
+		bag = new tw.Bag(space + "_" + type, "/");
 		bag.get(function(resource, status, xhr) {
 			// on success
 			owner = resource.policy.owner;
@@ -154,31 +153,17 @@
 			}
 		});
 
-		var url = '/status',
-			devHost = false;
-
-		if (window.location.href.match(/^file:/)) {
-			// for dev
-			url = '/status';
-			devHost = true;
-		}
-
 		$.ajax({
 			dataType: 'json',
-			url: url,
+			url: '/status',
 			success: function(data) {
 				//space = data.space.name || "policymaker";
 				space = (data.space) ? data.space.name : "policymaker";
-				host = '/';
-				if (devHost) {
-					host = data.server_host.scheme + '://'
-					+ space + '.' + data.server_host.host + '/';
-				}
 				if (data.username === 'GUEST') {
 					guestView();
 				} else {
 					$.ajax({
-						url: host + 'spaces/' + space + '/members',
+						url: '/spaces/' + space + '/members',
 						success: policyView,
 						error: guestView,
 					});
