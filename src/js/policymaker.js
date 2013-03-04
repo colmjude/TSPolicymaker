@@ -19,30 +19,30 @@
 
 	function policyView() {
 		var $pview = $(".policy-view");
-		$(".policy-view section h3 strong").text(space);
-		form = $(".policy-view form");
-		var porp = $(".policy-view").attr("data-privacy");
+		$pview.find("section h3 strong").text(space);
+		form = $pview.find("form");
+
+		function selectPolicy(newType) {
+			var oldType = (newType === "public") ? "private" : "public";
+			if($pview.hasClass( oldType )) {
+				$pview
+					.removeClass( oldType )
+					.addClass( newType )
+					.data("privacy", newType);
+				fetchPolicy( newType );
+			}
+		}
 
 		$("button.public", $pview).click(function() {
-			if($pview.hasClass("private")) {
-				$pview
-					.removeClass("private")
-					.addClass("public")
-					.attr("data-privacy", "public");
-				fetchPolicy("public");
-			}
+			selectPolicy( "public" );
+			return false;
 		});
 		$("button.private", $pview).click(function() {
-			if($pview.hasClass("public")) {
-				$pview
-					.removeClass("public")
-					.addClass("private")
-					.attr("data-privacy", "private");
-				fetchPolicy("private");
-			}
+			selectPolicy( "private" );
+			return false;
 		});
 
-		fetchPolicy(porp);
+		fetchPolicy( $pview.data("privacy") );
 		setFormHandlers(form);
 	}
 
