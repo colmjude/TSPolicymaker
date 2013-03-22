@@ -31,8 +31,15 @@ module.exports = function(grunt) {
     }
   });
 
+	// load standard tasks
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+
 	// Default task.
-	grunt.registerTask('default', 'lint');
+	grunt.registerTask('default', ['jshint']);
 
 	grunt.registerTask('update-tsapp', 'update files in dev to use with tsapp', function () {
 		grunt.file.copy('src/policymaker.html', 'dev/policymaker.html');

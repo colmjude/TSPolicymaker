@@ -1,7 +1,7 @@
 A Single Page App for Tiddlyspace that allows a member of a space to edit the policy of the bags comprising the space through a simple interface.
 
 ### Run Dev
-To run the the SPA locally you need to have **node**, **grunt** (currently v0.3) and **tsapp** installed in your environment.
+To run the the SPA locally you need to have **node**, **grunt** (now v0.4+) and **tsapp** installed in your environment.
 
 You can get **tsapp** by running
 `pip install -U tsapp`
