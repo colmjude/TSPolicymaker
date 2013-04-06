@@ -28,7 +28,17 @@ module.exports = function(grunt) {
         browser: true
       },
       globals: {}
-    }
+    },
+	exec: {
+		tsserve: {
+			command: "cd dev & tsapp serve",
+			stdout: true
+		},
+		tspush: {
+			command: "cd dev & tsapp push blog_public",
+			stdout: true
+		}
+	}
   });
 
 	// load standard tasks
@@ -37,9 +47,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks("grunt-exec");
 
 	// Default task.
 	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('run-dev', ['update-tsapp', 'ts-serve']);
 
 	grunt.registerTask('update-tsapp', 'update files in dev to use with tsapp', function () {
 		grunt.file.copy('src/policymaker.html', 'dev/policymaker.html');
@@ -50,5 +62,13 @@ module.exports = function(grunt) {
 			grunt.file.copy('src/js/'+filename, 'dev/assets/'+filename);
 		});
   });
+
+	grunt.registerTask("ts-deploy", "Deploy the application to TiddlySpace", function() {
+		grunt.task.run("exec:tspush");
+	});
+
+	grunt.registerTask("ts-serve", "Host the application locally via tsapp", function() {
+		grunt.task.run("exec:tsserve");
+	});
 
 };
