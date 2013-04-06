@@ -1,11 +1,21 @@
+// colour definitions
+$off-white: #F2F2F2;
+$text-light: #fff;
+$text-dark: #4D4D4D;
+$tsblue: #0082AF;
+$tspink: #BC4378;
+
+// font stack definitions
+$sans-serif-stack: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+
 html {
-	background: #F2F2F2;
+	background: $off-white;
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	font-family: $sans-serif-stack;
 	letter-spacing: 0.02em;
-	color: #4D4D4D;
+	color: $text-dark;
 	font-size: 62.5%;
 	background-position: 0px 0px;
 }
@@ -14,18 +24,18 @@ body {
 	margin: 0 auto 2em;
 	max-width: 960px;
 	position: relative;
-}
 
-#wrapper > section {
-	padding: 1em;
-	box-shadow: 0px 0px 4px rgba(50,50,50,0.2);
-	margin: 2em 0 0;
+	& > section {
+		padding: 1em;
+		box-shadow: 0px 0px 4px rgba(50,50,50,0.2);
+		margin: 2em 0 0;
+	}
 }
 
 .beta {
 	font-size: 1.6em;
 	background: #EB4715;
-	color: #fff;
+	color: $text-light;
 	padding: 0.6em;
 	display: inline;
 	position: absolute;
@@ -35,12 +45,12 @@ body {
 .guest-view {
 	background: #db3138;
 	font-size: 2.4em;
-	color: #fff;
+	color: $text-light;
 	display: none;
-}
 
-.guest-view a {
-	color: #fff;
+	a {
+		color: $text-light;
+	}
 }
 
 .policy-view {
@@ -48,27 +58,27 @@ body {
 	background: #fff;
 	padding-top: 0;
 	position: relative;
-}
 
-.policy-view h3 {
-	font-size: 1.5em;
+	h3 {
+		font-size: 1.5em;
+	}
 }
 
 .public {
-	border-top: 4px solid #0082AF;
+	border-top: 4px solid $tsblue;
 }
 
 .private {
-	border-top: 4px solid #BC4378;
+	border-top: 4px solid $tspink;
 }
 
 .disabled {
 	border-top: 4px solid #ccc;
 	color: #ccc;
-}
 
-.disabled label {
-	color: #ccc;
+	label {
+		color: #ccc;
+	}
 }
 
 .porp {
@@ -82,13 +92,13 @@ div.porp button {
 }
 
 .public .public {
-	border: 2px solid #0082AF;
-	color: #0082AF;
+	border: 2px solid $tsblue;
+	color: $tsblue;
 }
 
 .private .private {
-	border: 2px solid #BC4378;
-	color: #BC4378;
+	border: 2px solid $tspink;
+	color: $tspink;
 }
 
 .private button.public:hover {
@@ -101,10 +111,12 @@ div.porp button {
 	border: 2px solid #dca2bb;
 }
 
-.disabled .private,
-.disabled .public {
-	color: #ccc;
-	border: 2px solid #ccc;
+.disabled {
+	& .public,
+	& .private {
+		color: #ccc;
+		border: 2px solid #ccc;
+	}
 }
 
 form {
@@ -127,50 +139,54 @@ input {
 
 .public input {
 	color: #ADD1DD;
-}
 
-.public input:focus {
-	outline: 0;
-	border-color: rgba(0, 130, 175, 0.8);
-	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-	-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-	-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	&:focus {
+		outline: 0;
+		border-color: rgba(0, 130, 175, 0.8);
+		-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+		-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+		-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+		-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+	}
 }
 
 .lt-ie9 .public input:focus {
-	border-color: #0082AF;
+	border-color: $tsblue;
 }
 
 .private input {
 	color: #DCA2BB;
-}
 
-.private input:focus {
-	outline: 0;
-	border-color: rgba(188, 67, 122, 0.8);
-	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-	-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-	-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	&:focus {
+		outline: 0;
+		border-color: rgba(188, 67, 122, 0.8);
+		-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+		-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+		-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+		-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+	}
 }
 
 .lt-ie9 .private input:focus {
-	border-color: #BC4378;
+	border-color: $tspink;
 }
 
 .public input.editing, .public input.changed {
-	color: #0082AF;
+	color: $tsblue;
 }
 
 .private input.editing, .private input.changed {
-	color: #BC4378;
+	color: $tsblue;
 }
 
 .form-ctrls {
 	margin-top: 1em;
+
+	button {
+		padding: 0.65em 1em;
+	}
 }
 
 button {
@@ -181,16 +197,12 @@ button {
 	color: #fff;
 }
 
-.form-ctrls button {
-	padding: 0.65em 1em;
-}
-
 .public button {
-	background: #0082AF;
+	background: $tsblue;
 }
 
 .private button {
-	background: #BC4378;
+	background: $tspink;
 }
 
 .disabled button {
@@ -199,7 +211,7 @@ button {
 
 form button.reset {
 	background: none;
-	color: #0082AF;
+	color: $tsblue;
 }
 
 .disabled form button.reset {
@@ -207,7 +219,7 @@ form button.reset {
 }
 
 .private .reset {
-	color: #BC4378;
+	color: $tspink;
 }
 
 .help {

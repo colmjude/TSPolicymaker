@@ -3,6 +3,28 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+	copy: {
+		files: {src: ['src/policymaker.html'], dest: 'dev/', filter: 'isFile'},
+		js: {
+			expand: true, flatten: true,
+			src: ["src/js/**"],
+			dest: "dev/assets/",
+			filter: "isFile"
+		},
+		css: {
+			expand: true, flatten: true,
+			src: ["src/css/*.css"],
+			dest: "dev/assets/",
+			filter: "isFile"
+		}
+	},
+	compass: {
+		dist: {
+			options: {
+				config: 'config.rb'
+			}
+		}
+	},
     lint: {
       files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
     },
@@ -48,20 +70,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks("grunt-exec");
+	grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-contrib-compass");
 
 	// Default task.
 	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('run-dev', ['update-tsapp', 'ts-serve']);
 
-	grunt.registerTask('update-tsapp', 'update files in dev to use with tsapp', function () {
-		grunt.file.copy('src/policymaker.html', 'dev/policymaker.html');
-		grunt.file.recurse('src/css', function(abspath, rootdir, subdir, filename) {
-			grunt.file.copy('src/css/'+filename, 'dev/assets/'+filename);
-		});
-		grunt.file.recurse('src/js', function(abspath, rootdir, subdir, filename) {
-			grunt.file.copy('src/js/'+filename, 'dev/assets/'+filename);
-		});
-  });
+	grunt.registerTask('update-tsapp', ['compass', 'copy']);
 
 	grunt.registerTask("ts-deploy", "Deploy the application to TiddlySpace", function() {
 		grunt.task.run("exec:tspush");
