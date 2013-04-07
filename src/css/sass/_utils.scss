@@ -1,0 +1,9 @@
+@mixin boxshadow($spec...) {
+//	-webkit-transition: $spec;
+//	-moz-transition: $spec;
+//	-o-transition: $spec;
+//	transition: $spec;
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}box-shadow: $spec;
+	}
+}

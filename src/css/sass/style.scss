@@ -1,3 +1,5 @@
+@import 'utils';
+
 // colour definitions
 $off-white: #F2F2F2;
 $text-light: #fff;
@@ -143,11 +145,7 @@ input {
 	&:focus {
 		outline: 0;
 		border-color: rgba(0, 130, 175, 0.8);
-		-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-		-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-		-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-		-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6);
+		@include boxshadow(inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6));
 	}
 }
 
@@ -161,11 +159,7 @@ input {
 	&:focus {
 		outline: 0;
 		border-color: rgba(188, 67, 122, 0.8);
-		-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-		-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-		-ms-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-		-o-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(188, 67, 122, 0.6);
+		@include boxshadow(inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 130, 175, 0.6));
 	}
 }
 
@@ -178,7 +172,7 @@ input {
 }
 
 .private input.editing, .private input.changed {
-	color: $tsblue;
+	color: $tspink;
 }
 
 .form-ctrls {
