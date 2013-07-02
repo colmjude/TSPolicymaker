@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 			stdout: true
 		},
 		tspush: {
-			command: "cd dev & tsapp push blog_public",
+			command: "cd dev & tsapp push policymaker_public",
 			stdout: true
 		}
 	}
